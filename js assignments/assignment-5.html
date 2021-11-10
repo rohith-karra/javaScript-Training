@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+
+    <script>
+
+    function Transaction(tid, tdate, amt, accNo1,accNo2){
+        this.tid = tid;
+        this.tdate = tdate;
+        this.amt = amt;
+        this.accNo1 = accNo1;
+        this.accNo2=accNo2;
+        
+    }    
+
+    accList = new Array();
+    
+    t1 = new Transaction(1001,'10/23/2021',4500,40321,40232);
+    t2 = new Transaction(1001,'11/09/2021',3800,40322,40541);
+
+    accList.push(t1);
+    accList.push(t2);
+
+    function addRow(fm){
+        tid = parseInt(fm.tid.value) | 0 ;
+        tdate = fm.tdate.value.trim() ;
+        amt = parseFloat(fm.amt.value) |0;
+        accNo1 = parseInt(fm.accNo1.value) | 0;
+        accNo2 = parseInt(fm.accNo2.value) | 0;
+
+        accList.push(new Transaction(tid,tdate,amt,accNo1,accNo2));
+        
+        loadData();
+    }
+
+
+    function loadData(){
+    rows = "";
+    for(i=0;i<accList.length;i++){
+         rows += accList[i].tid+" "+ accList[i].tdate+" "+accList[i].amt+" "+accList[i].accNo1+" "+accList[i].accNo2+" ";
+    } 
+    console.log(rows);
+    }
+
+    </script>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>Transaction Id</td>
+                <td><input type="number" name="tid" /></td>
+            </tr>
+            <tr>
+                <td>Trade Date</td>
+                <td><input type="date" name="tdate" /></td>
+            </tr>
+            <tr>
+                <td>Amount</td>
+                <td><input type="number" name="amt" /></td>
+            </tr>
+            <tr>
+                <td>Sender Account Number</td>
+                <td><input type="number" name="accNo1" /></td>
+            </tr>
+            <tr>
+                <td>Receiver Account Number</td>
+                <td><input type="number" name="accNo2" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right">
+                    <input type="button" value="Submit" onclick="addRow(this.form)" />
+                </td>
+            
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

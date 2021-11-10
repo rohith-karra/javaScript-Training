@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>assignment2</title>
+    <style>
+    thead{
+        background-color: rgb(247, 224, 191);
+        padding: 3px;
+    }
+    tbody{
+        background-color: azure;
+        padding: 5px;
+        
+    }
+    table{
+        border: 1pt solid rgb(163, 157, 150);
+    }
+    </style>
+    <script>
+    
+    var accHolderName = prompt("Enter your name: ");
+    var balance = prompt("Enter your balance: ");
+    var accType = prompt("Enter your acc type: ");
+  
+    </script>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Value</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>accHolderName</td>
+                <td id="data1"></td>
+            </tr>
+            <tr>
+                <td>balance</td>
+                <td id="data2"></td>
+            </tr>
+            <tr>
+                <td>acc type</td>
+                <td id="data3"></td>
+            </tr>
+        </tbody>
+        
+    </table>
+</body>
+<script>
+     document.getElementById("data1").innerHTML = accHolderName;
+     document.getElementById("data2").innerHTML = balance;
+     document.getElementById("data3").innerHTML = accType;
+</script>
+</html>
