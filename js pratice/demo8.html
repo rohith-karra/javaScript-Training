@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    
+    <title>Demo 08 : Functions</title>
+</head>
+<body>
+    <script>
+        function doSum(x,y,action){
+            // action was reference to function
+            action(x+y);
+        }
+
+        function printConsole(a){
+            console.log("Value :"+a);
+        }
+
+        function printAlert(a){
+            alert("Value is "+a);
+        }
+
+        doSum(100,10,printConsole);
+    </script>
+</body>
+</html>

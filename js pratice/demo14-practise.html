@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+
+    <script>
+ 
+    function addRow(fm){
+        accNo = parseInt(fm.accno.value) | 0 ;
+        accName = fm.accname.value.trim() ;
+        accType = fm.acctype.value;
+        amt = parseFloat(fm.amt.value) | 0;
+
+        accList.push(new Account(accNo,accName,accType,amt));
+        
+        loadData();
+    }
+
+
+    function loadData(){
+    rows = "";
+    for(i=0;i<accList.length;i++){
+         rows += "<tr><td>"+accList[i].accNo+"</td><td>"+accList[i].accName+"</td><td>"+accList[i].accType+"</td><td>"+accList[i].amt+"</td></tr>";
+    } 
+    document.getElementById("data").innerHTML = rows;
+    }
+    window.onload = getName;
+
+        function setdetails(frm){
+            name1 = frm.accno.value | 0;
+            name2 = frm.accname.value.trim();
+            name3 = frm.acctype.value.trim();
+            name4 = frm.amt.value | 0;
+           
+            accList = new Array();
+            
+
+            usr = new Object();
+
+            usr.accno = name1;
+            usr.accname = name2;
+            usr.acctype = name3;
+            usr.amt = name4;
+            str = JSON.stringify(usr)
+            accList.push(str);
+            console.log("JSON String "+str);
+            localStorage.setItem("user",str);
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>Account Number</td>
+                <td><input type="number" name="accno" /></td>
+            </tr>
+            <tr>
+                <td>Account Holder name</td>
+                <td><input type="text" name="accname" /></td>
+            </tr>
+            <tr>
+                <td>Account Type</td>
+                <td><input type="radio" name="acctype" value="SB" checked/>Savings <input type="radio" name="acctype" value="CB" />Current </td>
+            </tr>
+            <tr>
+                <td>Account Balance</td>
+                <td><input type="number" name="amt" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="left">
+                    <input type="button" value="Add" onclick="setdetails(this.form)" />
+                </td>
+                <td colspan="2" align="right">
+                    <input type="button" value="clear" onclick="delRow(this.form)" />
+                </td>
+            
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

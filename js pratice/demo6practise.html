@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo 6 practise</title>
+</head>
+<body>
+    <table align="center">
+        <tr>
+            <td>Name</td>
+            <td><input type="text" id="name" onfocus="myFunction(this)" onfocusout="myFunction1(this)" required></td>
+
+        </tr>
+        <tr>
+            <td>age</td>
+            <td><input type="number" id="age" onfocus="myFunction(this)" onfocusout="myFunction1(this)" required></td>
+
+        </tr>
+        <tr>
+            <td align="right"><input type="button" value="submit"></td>
+        </tr>
+    </table>
+    
+</body>
+<script>
+    function myFunction(x) {
+      x.style.borderColor = "red";
+    }
+    function myFunction1(x) {
+      x.style.borderColor = "black";
+    }
+    </script>
+</html>

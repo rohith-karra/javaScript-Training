@@ -1,0 +1,19 @@
+<input type="text" id="ans" readonly/>
+
+    <script>
+        function doSum(x,y,action){
+            // action was reference to function
+            action(x+y);
+        }
+
+        function printConsole(a){
+            console.log("Value :"+a);
+        }
+
+        function printAlert(a){
+            alert("Value is "+a);
+        }
+
+        //create function printField() where, answer should be inserted into text field id "ans" (Replace innerHTML with value)
+        doSum(100,10,printConsole);
+    </script>

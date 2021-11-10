@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+
+    <script>
+    // constructor function : used for building objects !
+    function Account(accNo, accName, accType, amt){
+        // Initialize the MEMBER PROPERTIES using "this." as prefix for them
+        this.accNo = accNo;
+        this.accName = accName;
+        this.accType = accType;
+        //Member property name MAY NOT match with function parameter
+        this.amt = amt;
+        //But using same property name is MORE CONVENIENT !
+        
+    }    
+
+    accList = new Array();
+    
+    acc1 = new Account(1001,'Rohith','SB',23000);
+    acc2 = new Account(1002,'Rahul','SB',17000);
+
+    accList.push(acc1);
+    accList.push(acc2);
+
+    function addRow(fm){
+        accNo = parseInt(fm.accno.value) | 0 ;
+        accName = fm.accname.value.trim() ;
+        accType = fm.acctype.value;
+        amt = parseFloat(fm.amt.value) | 0;
+
+        accList.push(new Account(accNo,accName,accType,amt));
+        
+        loadData();
+    }
+
+
+    function loadData(){
+    rows = "";
+    for(i=0;i<accList.length;i++){
+         rows += "<tr><td>"+accList[i].accNo+"</td><td>"+accList[i].accName+"</td><td>"+accList[i].accType+"</td><td>"+accList[i].amt+"</td></tr>";
+    } 
+    document.getElementById("data").innerHTML = rows;
+    }
+
+    </script>
+</head>
+<body>
+    <form>
+        <table>
+            <thead>
+                <tr>
+                    <td>Account Number</td>
+                    <td>Account Holder name</td>
+                    <td>Type</td>
+                    <td>Balance</td>
+                </tr>
+            </thead>
+            <tbody id="data">
+                
+            </tbody>
+        </table>
+        <table>
+            <tr>
+                <td>Account Number</td>
+                <td><input type="number" name="accno" /></td>
+            </tr>
+            <tr>
+                <td>Account Holder name</td>
+                <td><input type="text" name="accname" /></td>
+            </tr>
+            <tr>
+                <td>Account Type</td>
+                <td><input type="radio" name="acctype" value="SB" checked/>Savings <input type="radio" name="acctype" value="CB" />Current </td>
+            </tr>
+            <tr>
+                <td>Account Balance</td>
+                <td><input type="number" name="amt" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right">
+                    <input type="button" value="Add" onclick="addRow(this.form)" />
+                </td>
+            
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>
