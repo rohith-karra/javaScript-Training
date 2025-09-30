@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Java Internship Mock Test (20 Theory + 7 Practical)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { --fg:#222; --muted:#666; --card:#f7f7f9; --code:#0b1021;}
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--fg); margin: 32px; line-height: 1.55; }
+    h1,h2 { margin: 0 0 8px; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 22px; margin-top: 28px; }
+    .sub { color: var(--muted); margin-bottom: 18px; }
+    .q { background: var(--card); border: 1px solid #e8e8ee; border-radius: 10px; padding: 16px; margin: 14px 0 18px; }
+    .q strong { display: inline-block; margin-bottom: 8px; }
+    .opts { margin-top: 10px; }
+    .opts label { display: block; margin: 6px 0; cursor: pointer; }
+    .code { background: #0f172a08; border: 1px solid #e6e6f2; border-radius: 8px; padding: 10px; overflow:auto; }
+    pre { margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; color: var(--code);}
+    textarea { width: 100%; min-height: 90px; padding: 10px; border-radius: 8px; border: 1px solid #ddd; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; }
+    .tiny { font-size: 12px; color: var(--muted); margin-top: 6px; }
+    .divider { height: 1px; background: #eee; margin: 28px 0; }
+    .note { background: #fff9e6; border: 1px solid #ffe6a3; padding: 10px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Java Internship Mock Test</h1>
+  <p class="sub"><strong>Format:</strong> 20 Theory + 7 Practical. Fill your choices/answers below, save this file, and commit to the repository.</p>
+  <div class="note">
+    Pro tip: Use “Preview” in GitHub to view, then “Edit” to fill answers. Radios/checkboxes won’t persist in the preview — your <em>committed HTML</em> will contain your answers if you check/tick them here before saving the file.
+  </div>
+
+  <h2>Section A — Theory (20 Questions)</h2>
+
+  <!-- Q1 -->
+  <div class="q" id="q1">
+    <strong>Q1. What is the output of the following code?</strong>
+    <div class="code"><pre>public class Test {
+  public static void main(String[] args) {
+    String s1 = new String("java");
+    String s2 = "java";
+    System.out.println(s1 == s2);
+    System.out.println(s1.equals(s2));
+  }
+}</pre></div>
+    <div class="opts">
+      <label><input type="radio" name="q1" value="A"> true true</label>
+      <label><input type="radio" name="q1" value="B"> false true</label>
+      <label><input type="radio" name="q1" value="C"> true false</label>
+      <label><input type="radio" name="q1" value="D"> false false</label>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="q" id="q2">
+    <strong>Q2. Which of the following is <em>not</em> a valid access modifier in Java?</strong>
+    <div class="opts">
+      <label><input type="radio" name="q2" value="A"> public</label>
+      <label><input type="radio" name="q2" value="B"> private</label>
+      <label><input type="radio" name="q2" value="C"> protected</label>
+      <label><input type="radio" name="q2" value="D"> friendly</label>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="q" id="q3">
+    <strong>Q3. Default value of an uninitialized <code>boolean</code> instance variable?</strong>
+    <div class="opts">
+      <label><input type="radio" name="q3" value="A"> null</label>
+      <label><input type="radio" name="q3" value="B"> false</label>
+      <label><input type="radio" name="q3" value="C"> true</label>
+      <label><input type="radio" name="q3" value="D"> 0</label>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="q" id="q4">
+    <strong>Q4. Identify the correct statement about <code>String</code> in Java.</strong>
+    <div class="opts">
+      <label><input type="radio" name="q4" value="A"> String objects are mutable</label>
+      <label><input type="radio" name="q4" value="B"> String objects are immutable</label>
+      <label><input type="radio" name="q4" value="C"> String is a primitive type</label>
+      <label><input type="radio" name="q4" value="D"> Strings are garbage collected manually</label>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="q" id="q5">
+    <strong>Q5. What will this program print?</strong>
+    <div class="code"><pre>public class Demo {
+  public static void main(String[] args) {
+    int x = 5;
+    System.out.println(x++ + ++x);
+  }
+}</pre></div>
+    <div class="opts">
+      <label><input type="radio" name="q5" value="A"> 10</label>
+      <label><input type="radio" name="q5" value="B"> 11</label>
+      <label><input type="radio" name="q5" value="C"> 12</label>
+      <label><input type="radio" name="q5" value="D"> 13</label>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="q" id="q6">
+    <strong>Q6. Difference between <code>throw</code> and <code>throws</code>?</strong>
+    <textarea name="q6"></textarea>
+  </div>
+
+  <!-- Q7 -->
+  <div class="q" id="q7">
+    <strong>Q7. Can a constructor be <code>final</code> in Java? Explain.</strong>
+    <textarea name="q7"></textarea>
+  </div>
+
+  <!-- Q8 -->
+  <div class="q" id="q8">
+    <strong>Q8. Difference between method overloading and overriding?</strong>
+    <textarea name="q8"></textarea>
+  </div>
+
+  <!-- Q9 -->
+  <div class="q" id="q9">
+    <strong>Q9. What does the <code>transient</code> keyword mean?</strong>
+    <textarea name="q9"></textarea>
+  </div>
+
+  <!-- Q10 -->
+  <div class="q" id="q10">
+    <strong>Q10. JVM vs JDK vs JRE — explain briefly.</strong>
+    <textarea name="q10"></textarea>
+  </div>
+
+  <!-- Q11 -->
+  <div class="q" id="q11">
+    <strong>Q11. Explain <code>final</code>, <code>finally</code>, and <code>finalize()</code>.</strong>
+    <textarea name="q11"></textarea>
+  </div>
+
+  <!-- Q12 -->
+  <div class="q" id="q12">
+    <strong>Q12. Difference between <code>ArrayList</code> and <code>LinkedList</code>?</strong>
+    <textarea name="q12"></textarea>
+  </div>
+
+  <!-- Q13 -->
+  <div class="q" id="q13">
+    <strong>Q13. Checked vs unchecked exceptions?</strong>
+    <textarea name="q13"></textarea>
+  </div>
+
+  <!-- Q14 -->
+  <div class="q" id="q14">
+    <strong>Q14. What happens for <code>System.out.println(10/0);</code> ?</strong>
+    <div class="opts">
+      <label><input type="radio" name="q14" value="A"> Prints Infinity</label>
+      <label><input type="radio" name="q14" value="B"> Throws ArithmeticException</label>
+      <label><input type="radio" name="q14" value="C"> Prints 0</label>
+      <label><input type="radio" name="q14" value="D"> Compilation error</label>
+    </div>
+  </div>
+
+  <!-- Q15 -->
+  <div class="q" id="q15">
+    <strong>Q15. Use of the <code>super</code> keyword?</strong>
+    <textarea name="q15"></textarea>
+  </div>
+
+  <!-- Q16 -->
+  <div class="q" id="q16">
+    <strong>Q16. Can an interface have a constructor? Why/why not?</strong>
+    <textarea name="q16"></textarea>
+  </div>
+
+  <!-- Q17 -->
+  <div class="q" id="q17">
+    <strong>Q17. Difference between <code>==</code> and <code>equals()</code> for objects?</strong>
+    <textarea name="q17"></textarea>
+  </div>
+
+  <!-- Q18 -->
+  <div class="q" id="q18">
+    <strong>Q18. Difference between <code>HashMap</code> and <code>Hashtable</code>?</strong>
+    <textarea name="q18"></textarea>
+  </div>
+
+  <!-- Q19 -->
+  <div class="q" id="q19">
+    <strong>Q19. What is multithreading? Why is it useful?</strong>
+    <textarea name="q19"></textarea>
+  </div>
+
+  <!-- Q20 -->
+  <div class="q" id="q20">
+    <strong>Q20. Explain garbage collection in Java.</strong>
+    <textarea name="q20"></textarea>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2>Section B — Practical (7 Questions)</h2>
+
+  <!-- P1 -->
+  <div class="q" id="p1">
+    <strong>P1. Palindrome check</strong>
+    <div class="tiny">Write a method that returns true if a given string is a palindrome (ignore case and non-alphanumerics optional).</div>
+    <textarea name="p1" placeholder="// Java code here"></textarea>
+  </div>
+
+  <!-- P2 -->
+  <div class="q" id="p2">
+    <strong>P2. Fibonacci series up to <code>n</code> terms</strong>
+    <textarea name="p2" placeholder="// Java code here"></textarea>
+  </div>
+
+  <!-- P3 -->
+  <div class="q" id="p3">
+    <strong>P3. Find maximum and minimum in an integer array</strong>
+    <textarea name="p3" placeholder="// Java code here"></textarea>
+  </div>
+
+  <!-- P4 -->
+  <div class="q" id="p4">
+    <strong>P4. Factorial using recursion</strong>
+    <textarea name="p4" placeholder="// Java code here"></textarea>
+  </div>
+
+  <!-- P5 -->
+  <div class="q" id="p5">
+    <strong>P5. Character frequency using <code>HashMap</code></strong>
+    <textarea name="p5" placeholder="// Java code here"></textarea>
+  </div>
+
+  <!-- P6 -->
+  <div class="q" id="p6">
+    <strong>P6. Class <code>Student</code> with <code>name</code> and <code>marks</code>; store multiple students in an <code>ArrayList</code> and print details</strong>
+    <textarea name="p6" placeholder="// Java code here"></textarea>
+  </div>
+
+  <!-- P7 -->
+  <div class="q" id="p7">
+    <strong>P7. Prime number check</strong>
+    <textarea name="p7" placeholder="// Java code here"></textarea>
+  </div>
+
+  <div class="divider"></div>
+  <p class="tiny">Done? Save this file and commit. You can also open it locally in a browser to fill and then paste your answers back into the file before committing.</p>
+</body>
+</html>
