@@ -21,13 +21,15 @@
     .tiny { font-size: 12px; color: var(--muted); margin-top: 6px; }
     .divider { height: 1px; background: #eee; margin: 28px 0; }
     .note { background: #fff9e6; border: 1px solid #ffe6a3; padding: 10px; border-radius: 8px; }
+    button { margin: 10px 6px 0 0; padding: 10px 16px; border-radius: 8px; border: 1px solid #ccc; cursor: pointer; }
+    #result { margin-top: 15px; font-weight: bold; }
   </style>
 </head>
 <body>
   <h1>Java Internship Mock Test</h1>
   <p class="sub"><strong>Format:</strong> 20 Theory + 7 Practical. Fill your choices/answers below, save this file, and commit to the repository.</p>
   <div class="note">
-    Pro tip: Use “Preview” in GitHub to view, then “Edit” to fill answers. Radios/checkboxes won’t persist in the preview — your <em>committed HTML</em> will contain your answers if you check/tick them here before saving the file.
+    tip: open locally in browser. Radios/checkboxes won’t persist automatically — but with the Download button below, your <em>filled file</em> will include your answers and score for commit.
   </div>
 
   <h2>Section A — Theory (20 Questions)</h2>
@@ -243,7 +245,67 @@
     <textarea name="p7" placeholder="// Java code here"></textarea>
   </div>
 
-  <div class="divider"></div>
-  <p class="tiny">Done? Save this file and commit. You can also open it locally in a browser to fill and then paste your answers back into the file before committing.</p>
+   <div class="divider"></div>
+  <button onclick="submitQuiz()">Submit & Show Score</button>
+  <button onclick="downloadFilled()">Download My Answers</button>
+  <div id="result"></div>
+
+  <script>
+    // Answer key for theory MCQs (by question id)
+    const answerKey = {
+      q1: "B",
+      q2: "D",
+      q3: "B",
+      q4: "B",
+      q5: "C",
+      q14: "B"
+      // Add more if you decide to auto-score other MCQs
+    };
+
+    function submitQuiz() {
+      let score = 0;
+      let total = Object.keys(answerKey).length;
+      for (let q in answerKey) {
+        let chosen = document.querySelector('input[name="'+q+'"]:checked');
+        if (chosen && chosen.value === answerKey[q]) {
+          score++;
+        }
+      }
+      document.getElementById("result").innerText =
+        "Your Score: " + score + " / " + total + " (theory auto-graded)";
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function downloadFilled() {
+      // Clone current DOM
+      let clone = document.documentElement.cloneNode(true);
+
+      // Fill textareas with current values
+      clone.querySelectorAll("textarea").forEach((ta,i) => {
+        ta.innerText = ta.value;
+      });
+
+      // Preserve checked radios
+      clone.querySelectorAll("input[type=radio]").forEach(r => {
+        if (r.checked) r.setAttribute("checked", "checked");
+        else r.removeAttribute("checked");
+      });
+
+      // Add score text into clone if exists
+      let resText = document.getElementById("result").innerText;
+      if (resText) {
+        let resDiv = clone.querySelector("#result");
+        if (resDiv) resDiv.innerText = resText;
+      }
+
+      // Serialize and download
+      let html = "<!DOCTYPE html>\n" + clone.outerHTML;
+      let blob = new Blob([html], {type: "text/html"});
+      let a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "mock_test_filled.html";
+      a.click();
+    }
+  </script>
 </body>
 </html>
