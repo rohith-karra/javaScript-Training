@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>Java Internship Mock Test (20 Theory + 7 Practical)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root { --fg:#222; --muted:#666; --card:#f7f7f9; --code:#0b1021;}
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--fg); margin: 32px; line-height: 1.55; }
+    h1,h2 { margin: 0 0 8px; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 22px; margin-top: 28px; }
+    .sub { color: var(--muted); margin-bottom: 18px; }
+    .q { background: var(--card); border: 1px solid #e8e8ee; border-radius: 10px; padding: 16px; margin: 14px 0 18px; }
+    .q strong { display: inline-block; margin-bottom: 8px; }
+    .opts { margin-top: 10px; }
+    .opts label { display: block; margin: 6px 0; cursor: pointer; }
+    .code { background: #0f172a08; border: 1px solid #e6e6f2; border-radius: 8px; padding: 10px; overflow:auto; }
+    pre { margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; color: var(--code);}
+    textarea { width: 100%; min-height: 90px; padding: 10px; border-radius: 8px; border: 1px solid #ddd; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; }
+    .tiny { font-size: 12px; color: var(--muted); margin-top: 6px; }
+    .divider { height: 1px; background: #eee; margin: 28px 0; }
+    .note { background: #fff9e6; border: 1px solid #ffe6a3; padding: 10px; border-radius: 8px; }
+    button { margin: 10px 6px 0 0; padding: 10px 16px; border-radius: 8px; border: 1px solid #ccc; cursor: pointer; }
+    #result { margin-top: 15px; font-weight: bold; }
+  </style><style type="text/css" id="operaUserStyle"></style>
+</head>
+<body>
+  <h1>Java Internship Mock Test</h1>
+  <p class="sub"><strong>Format:</strong> 20 Theory + 7 Practical. Fill your choices/answers below, save this file, and commit to the repository.</p>
+  <div class="note">
+    tip: open locally in browser. Radios/checkboxes won’t persist automatically — but with the Download button below, your <em>filled file</em> will include your answers and score for commit.
+  </div>
+
+  <h2>Section A — Theory (20 Questions)</h2>
+
+  <!-- Q1 -->
+  <div class="q" id="q1">
+    <strong>Q1. What is the output of the following code?</strong>
+    <div class="code"><pre>public class Test {
+  public static void main(String[] args) {
+    String s1 = new String("java");
+    String s2 = "java";
+    System.out.println(s1 == s2);
+    System.out.println(s1.equals(s2));
+  }
+}</pre></div>
+    <div class="opts">
+      <label><input type="radio" name="q1" value="A"> true true</label>
+      <label><input type="radio" name="q1" value="B" checked="checked"> false true</label>
+      <label><input type="radio" name="q1" value="C"> true false</label>
+      <label><input type="radio" name="q1" value="D"> false false</label>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="q" id="q2">
+    <strong>Q2. Which of the following is <em>not</em> a valid access modifier in Java?</strong>
+    <div class="opts">
+      <label><input type="radio" name="q2" value="A"> public</label>
+      <label><input type="radio" name="q2" value="B"> private</label>
+      <label><input type="radio" name="q2" value="C"> protected</label>
+      <label><input type="radio" name="q2" value="D" checked="checked"> friendly</label>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="q" id="q3">
+    <strong>Q3. Default value of an uninitialized <code>boolean</code> instance variable?</strong>
+    <div class="opts">
+      <label><input type="radio" name="q3" value="A"> null</label>
+      <label><input type="radio" name="q3" value="B" checked="checked"> false</label>
+      <label><input type="radio" name="q3" value="C"> true</label>
+      <label><input type="radio" name="q3" value="D"> 0</label>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="q" id="q4">
+    <strong>Q4. Identify the correct statement about <code>String</code> in Java.</strong>
+    <div class="opts">
+      <label><input type="radio" name="q4" value="A"> String objects are mutable</label>
+      <label><input type="radio" name="q4" value="B" checked="checked"> String objects are immutable</label>
+      <label><input type="radio" name="q4" value="C"> String is a primitive type</label>
+      <label><input type="radio" name="q4" value="D"> Strings are garbage collected manually</label>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="q" id="q5">
+    <strong>Q5. What will this program print?</strong>
+    <div class="code"><pre>public class Demo {
+  public static void main(String[] args) {
+    int x = 5;
+    System.out.println(x++ + ++x);
+  }
+}</pre></div>
+    <div class="opts">
+      <label><input type="radio" name="q5" value="A"> 10</label>
+      <label><input type="radio" name="q5" value="B"> 11</label>
+      <label><input type="radio" name="q5" value="C" checked="checked"> 12</label>
+      <label><input type="radio" name="q5" value="D"> 13</label>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="q" id="q6">
+    <strong>Q6. Difference between <code>throw</code> and <code>throws</code>?</strong>
+    <textarea name="q6">throw and throws keywords in Java are both used in exception handling but serve distinct purposes:<br>Throw is used to explicitly throw a single exception object, inside a method body. Throws is used to declare exceptions a method might throw,in the method signature.<br>Throw is an instance of an Exception class,It triggers the exception and alters control flow.   <br><br>Throws is comma-separated list of Exception types and informs callers about potential exceptions.</textarea>
+  </div>
+
+  <!-- Q7 -->
+  <div class="q" id="q7">
+    <strong>Q7. Can a constructor be <code>final</code> in Java? Explain.</strong>
+    <textarea name="q7">Constructor can't be final in java. Because you can’t override or extend the final keyword in Java. Constructors aren't inherited and never overridden.</textarea>
+  </div>
+
+  <!-- Q8 -->
+  <div class="q" id="q8">
+    <strong>Q8. Difference between method overloading and overriding?</strong>
+    <textarea name="q8">Method overloading has same method name,but different parameter list (type, number, or order) and happens within the same class(by signature).<br>Method overloading is resolved at compile time.Return type can differ(as long as parameter list is different).Access modifier is irrelevant<br><br>Method overriding has same method name and parameter list (signature must match exactly).It Happens across inheritance and is resolved at runtime(dynamic dispatch).<br>Return type must be the same or covariant.Access modifiers can be the same or more open.</textarea>
+  </div>
+
+  <!-- Q9 -->
+  <div class="q" id="q9">
+    <strong>Q9. What does the <code>transient</code> keyword mean?</strong>
+    <textarea name="q9">Transient keyword marks a field to be skipped during serialization.If a class implements Serializable, and you write it to a stream (like saving to a file or sending over the network),transient fields won’t be saved.Only applies to fields, not methods or classes.Great for sensitive info like passwords, session tokens, or anything that shouldn’t leave memory.</textarea>
+  </div>
+
+  <!-- Q10 -->
+  <div class="q" id="q10">
+    <strong>Q10. JVM vs JDK vs JRE — explain briefly.</strong>
+    <textarea name="q10">JDK, JRE, and JVM are key components of the Java programming ecosystem. <br><br>The JDK is used by developers to write and compile Java programs, which includes JRE and development tools like the compiler. While the JRE is necessary for running those programs; JRE contains the JVM and core libraries. The JVM is the underlying technology that executes the compiled Java code(bytecode), making Java a platform-independent language. Understanding the distinctions between these three components is crucial for anyone working with Java.</textarea>
+  </div>
+
+  <!-- Q11 -->
+  <div class="q" id="q11">
+    <strong>Q11. Explain <code>final</code>, <code>finally</code>, and <code>finalize()</code>.</strong>
+    <textarea name="q11">final- Makes a variable a constant,prevents a method from being overridden,prevents a class from being subclassed. It enforces immutability<br><br>finally-It is a fail-safe operational procedure, ensuring resource deallocation and compliance, no matter how turbulent your execution flow gets.<br><br>finalize-Called by Garbage Collector(GC) before object destruction.Not guaranteed to run immediately.</textarea>
+  </div>
+
+  <!-- Q12 -->
+  <div class="q" id="q12">
+    <strong>Q12. Difference between <code>ArrayList</code> and <code>LinkedList</code>?</strong>
+    <textarea name="q12">Arraylist-Fast for random access but slow when inserting/deleting in the middle. It is  a dynamic array<br><br>Linkedlist-Fast at adding/removing anywhere, slow at random access.It is a doubly linkedlist</textarea>
+  </div>
+
+  <!-- Q13 -->
+  <div class="q" id="q13">
+    <strong>Q13. Checked vs unchecked exceptions?</strong>
+    <textarea name="q13">Checked exceptions-Exceptions the compiler forces you to handle.You either try/catch them or declare them with throws<br><br>Unchecked exceptions-Exceptions that occur during runtime and are not required to be caught. They usually indicate bugs in the code.</textarea>
+  </div>
+
+  <!-- Q14 -->
+  <div class="q" id="q14">
+    <strong>Q14. What happens for <code>System.out.println(10/0);</code> ?</strong>
+    <div class="opts">
+      <label><input type="radio" name="q14" value="A"> Prints Infinity</label>
+      <label><input type="radio" name="q14" value="B" checked="checked"> Throws ArithmeticException</label>
+      <label><input type="radio" name="q14" value="C"> Prints 0</label>
+      <label><input type="radio" name="q14" value="D"> Compilation error</label>
+    </div>
+  </div>
+
+  <!-- Q15 -->
+  <div class="q" id="q15">
+    <strong>Q15. Use of the <code>super</code> keyword?</strong>
+    <textarea name="q15">If a subclass has a field with the same name as the parent, super lets you access the parent’s version. <br>for example: Resolve name conflicts between parent and child,Call overridden methods from the parent,Call a specific parent constructor.</textarea>
+  </div>
+
+  <!-- Q16 -->
+  <div class="q" id="q16">
+    <strong>Q16. Can an interface have a constructor? Why/why not?</strong>
+    <textarea name="q16">Interfaces can't have constructors.Interfaces don’t have any state to initialize by themselves.A constructor is used to create an object of a class.interfaces can have default methods and static methods but not a constructor.</textarea>
+  </div>
+
+  <!-- Q17 -->
+  <div class="q" id="q17">
+    <strong>Q17. Difference between <code>==</code> and <code>equals()</code> for objects?</strong>
+    <textarea name="q17">== checks the memory locations(reference equality)<br><br>equals() for objects to compare values. It usually neds overriding</textarea>
+  </div>
+
+  <!-- Q18 -->
+  <div class="q" id="q18">
+    <strong>Q18. Difference between <code>HashMap</code> and <code>Hashtable</code>?</strong>
+    <textarea name="q18">Hashtable: Synchronized, thread-safe by default. Multiple threads can access it safely—but it comes with a slower performance.No null keys/values allowed.<br><br>HashMap: Not synchronized. Faster in single-threaded scenarios. Use Collections.synchronizedMap() or ConcurrentHashMap for thread safety.One null key allowed, multiple null values are fine.</textarea>
+  </div>
+
+  <!-- Q19 -->
+  <div class="q" id="q19">
+    <strong>Q19. What is multithreading? Why is it useful?</strong>
+    <textarea name="q19">Multithreading is instead of doing one task from start to finish before moving on, your program can split the task into chunks and handle them concurrently. Tasks that can run in parallel finish faster. Multithreading maximizes hardware use GUIs stay smooth.</textarea>
+  </div>
+
+  <!-- Q20 -->
+  <div class="q" id="q20">
+    <strong>Q20. Explain garbage collection in Java.</strong>
+    <textarea name="q20">In Java, when you create objects, they live in memory (the heap).Garbage Collection is Java’s automated system that detects objects that are unutilized (no references pointing to them) and frees that memory for new objects. It also identifies garbage objects. Java has multiple GC algorithms: Serial, Parallel, G1, ZGC, etc., each optimized for different workloads. Some focus on throughput, some on low pause times</textarea>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2>Section B — Practical (7 Questions)</h2>
+
+  <!-- P1 -->
+  <div class="q" id="p1">
+    <strong>P1. Palindrome check</strong>
+    <div class="tiny">Write a method that returns true if a given string is a palindrome (ignore case and non-alphanumerics optional).</div>
+    <textarea name="p1" placeholder="// Java code here">import java.util.Scanner;<br><br>public class PalindromeCheck {<br>    public static void main(String[] args) {<br>        Scanner sc = new Scanner(System.in);<br>        System.out.print("Enter a string to check: ");<br>        String input = sc.nextLine();<br>        String normalized = input.replaceAll("\\s+", "").toLowerCase();<br><br>        boolean palindrome = true;<br>        int len = normalized.length();<br>        for (int i = 0; i &lt; len / 2; i++) {<br>            if (normalized.charAt(i) != normalized.charAt(len - 1 - i)) {<br>                palindrome = false;<br>                break;<br>            }<br>        }<br><br>        if (palindrome) {<br>            System.out.println("\"" + input + "\" is a palindrome!");<br>        } else {<br>            System.out.println("\"" + input + "\" is NOT a palindrome.");<br>        }<br>    }<br>}<br></textarea>
+  </div>
+
+  <!-- P2 -->
+  <div class="q" id="p2">
+    <strong>P2. Fibonacci series up to <code>n</code> terms</strong>
+    <textarea name="p2" placeholder="// Java code here">import java.util.Scanner;<br><br>public class Fibonacci {<br>    public static void main(String[] args) {<br>        Scanner sc = new Scanner(System.in);<br>        System.out.print("Enter the number of terms (n): ");<br>        int n = sc.nextInt();<br><br>        if (n &lt;= 0) {<br>            System.out.println("Please enter a positive integer.");<br>            return;<br>        }<br><br>        long first = 0, second = 1;<br>        System.out.println("Fibonacci series up to " + n + " terms:");<br>        <br>        for (int i = 1; i &lt;= n; i++) {<br>            System.out.print(first + " ");<br>            long next = first + second;<br>            first = second;<br>            second = next;<br>        }<br>    }<br>}<br></textarea>
+  </div>
+
+  <!-- P3 -->
+  <div class="q" id="p3">
+    <strong>P3. Find maximum and minimum in an integer array</strong>
+    <textarea name="p3" placeholder="// Java code here">import java.util.Scanner;<br><br>public class MaxMinArray {<br>    public static void main(String[] args) {<br>        Scanner sc = new Scanner(System.in);<br>        System.out.print("Enter the number of elements in the array: ");<br>        int n = sc.nextInt();<br>        <br>        if (n &lt;= 0) {<br>            System.out.println("Array must have at least one element.");<br>            return;<br>        }<br><br>        int[] arr = new int[n];<br>        System.out.println("Enter the elements of the array:");<br>        for (int i = 0; i &lt; n; i++) {<br>            arr[i] = sc.nextInt();<br>        }<br><br>        int max = arr[0];<br>        int min = arr[0];<br><br>        for (int i = 1; i &lt; n; i++) {<br>            if (arr[i] &gt; max) max = arr[i];<br>            if (arr[i] &lt; min) min = arr[i];<br>        }<br><br>        System.out.println("Maximum value: " + max);<br>        System.out.println("Minimum value: " + min);<br>    }<br>}<br></textarea>
+  </div>
+
+  <!-- P4 -->
+  <div class="q" id="p4">
+    <strong>P4. Factorial using recursion</strong>
+    <textarea name="p4" placeholder="// Java code here">public class Recursion {<br><br>    public static long factorial(int n) {<br>        if (n &lt; 0) {<br>            throw new IllegalArgumentException("Factorial is not defined for negative numbers.");<br>        }<br>        if (n == 0 || n == 1) { <br>            return 1;<br>        }<br>        return n * factorial(n - 1);<br>    }<br><br>}<br></textarea>
+  </div>
+
+  <!-- P5 -->
+  <div class="q" id="p5">
+    <strong>P5. Character frequency using <code>HashMap</code></strong>
+    <textarea name="p5" placeholder="// Java code here">import java.util.HashMap;<br>import java.util.Map;<br><br>public class CharacterFrequency {<br>    public static void main(String[] args) {<br>        String str = "hello world";<br>        Map&lt;Character, Integer&gt; freqMap = new HashMap&lt;&gt;();<br><br>        for (char c : str.toCharArray()) {<br>            if (c != ' ') { // ignoring spaces<br>                freqMap.put(c, freqMap.getOrDefault(c, 0) + 1);<br>            }<br>        }<br><br>        // Display the character frequencies<br>        for (Map.Entry&lt;Character, Integer&gt; entry : freqMap.entrySet()) {<br>            System.out.println(entry.getKey() + ": " + entry.getValue());<br>        }<br>    }<br>}<br></textarea>
+  </div>
+
+  <!-- P6 -->
+  <div class="q" id="p6">
+    <strong>P6. Class <code>Student</code> with <code>name</code> and <code>marks</code>; store multiple students in an <code>ArrayList</code> and print details</strong>
+    <textarea name="p6" placeholder="// Java code here">import java.util.ArrayList;<br><br>class Student {<br>    private String name;<br>    private int marks;<br><br>    // Constructor<br>    public Student(String name, int marks) {<br>        this.name = name;<br>        this.marks = marks;<br>    }<br><br>    // Getters<br>    public String getName() {<br>        return name;<br>    }<br><br>    public int getMarks() {<br>        return marks;<br>    }<br><br>    // Method to display student info<br>    public void display() {<br>        System.out.println("Name: " + name + ", Marks: " + marks);<br>    }<br>}<br><br>public class StudentDemo {<br>    public static void main(String[] args) {<br>        // Create an ArrayList to store students<br>        ArrayList&lt;Student&gt; students = new ArrayList&lt;&gt;();<br><br>        // Adding students<br>        students.add(new Student("Alice", 85));<br>        students.add(new Student("Bob", 92));<br>        students.add(new Student("Charlie", 78));<br><br>        // Printing student details<br>        System.out.println("Student Details:");<br>        for (Student student : students) {<br>            student.display();<br>        }<br>    }<br>}<br></textarea>
+  </div>
+
+  <!-- P7 -->
+  <div class="q" id="p7">
+    <strong>P7. Prime number check</strong>
+    <textarea name="p7" placeholder="// Java code here">public class Prime {<br>    public static boolean isPrime(int num) {<br>        if (n &lt;= 1) return false;<br>        if (n == 2) return true;<br><br>        for (int i = 2;i &lt; n;i++) {<br>            if (n % i == 0) return false;<br>        }<br>        return true;<br>    }<br>}<br></textarea>
+  </div>
+
+   <div class="divider"></div>
+  <button onclick="submitQuiz()">Submit &amp; Show Score</button>
+  <button onclick="downloadFilled()">Download My Answers</button>
+  <div id="result">Your Score: 6 / 6 (theory auto-graded)</div>
+
+  <script>
+    // Answer key for theory MCQs (by question id)
+    const answerKey = {
+      q1: "B",
+      q2: "D",
+      q3: "B",
+      q4: "B",
+      q5: "C",
+      q14: "B"
+      // Add more if you decide to auto-score other MCQs
+    };
+
+    function submitQuiz() {
+      let score = 0;
+      let total = Object.keys(answerKey).length;
+      for (let q in answerKey) {
+        let chosen = document.querySelector('input[name="'+q+'"]:checked');
+        if (chosen && chosen.value === answerKey[q]) {
+          score++;
+        }
+      }
+      document.getElementById("result").innerText =
+        "Your Score: " + score + " / " + total + " (theory auto-graded)";
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function downloadFilled() {
+      // Clone current DOM
+      let clone = document.documentElement.cloneNode(true);
+
+      // Fill textareas with current values
+      clone.querySelectorAll("textarea").forEach((ta,i) => {
+        ta.innerText = ta.value;
+      });
+
+      // Preserve checked radios
+      clone.querySelectorAll("input[type=radio]").forEach(r => {
+        if (r.checked) r.setAttribute("checked", "checked");
+        else r.removeAttribute("checked");
+      });
+
+      // Add score text into clone if exists
+      let resText = document.getElementById("result").innerText;
+      if (resText) {
+        let resDiv = clone.querySelector("#result");
+        if (resDiv) resDiv.innerText = resText;
+      }
+
+      // Serialize and download
+      let html = "<!DOCTYPE html>\n" + clone.outerHTML;
+      let blob = new Blob([html], {type: "text/html"});
+      let a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "mock_test_filled.html";
+      a.click();
+    }
+  </script>
+
+
+</body></html>
